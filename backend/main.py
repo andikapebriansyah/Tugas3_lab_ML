@@ -46,6 +46,14 @@ def preprocess_pipeline(image: Image.Image, IMG_SIZE = (224, 224)) -> np.ndarray
     """
     
     # TODO: Lengkapi proses preprocessing di bawah ini
+    # 1. Resize gambar ke ukuran yang dibutuhkan model
+    image = image.resize(IMG_SIZE)
+    
+    # 2. Konversi gambar ke array numpy
+    arr = np.array(image, dtype=np.float32)
+    
+    # 3. Rescaling pixel dari [0,255] ke [0,1]
+    arr = arr / 255.0
     
     return arr  # pastikan mengembalikan array hasil preprocessing
 

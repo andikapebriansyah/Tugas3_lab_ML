@@ -28,12 +28,13 @@ if img:
         with st.spinner("Memproses..."):
             # Siapkan file untuk dikirim ke backend
             buf = io.BytesIO()
+            img = img.convert("RGB")
             img.save(buf, format="JPEG")
             buf.seek(0)
             files = {"file": buf.getvalue()}
             response = requests.post(API_URL, files=files)
             if response.ok:
                 data = response.json()
-                st.success(f"Prediksi: **{data['label'].upper()}** ({data['confidence']*100:.1f}%)")
+                st.success(f"Prediksi: *{data['label'].upper()}* ({data['confidence']*100:.1f}%)")
             else:
-                st.error("Terjadi kesalahan pada server")
+                st.error("Terjadi kesalahan pada server")
