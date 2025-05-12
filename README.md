@@ -1,8 +1,3 @@
-## NOTE: sbeelum menjalankan:
-- Pastikan gambar yang digunakan jelas
-- Utamakan background satu warna, misal putih, hijau, dll tanpa ada objek lain yang menganggu
-- Model bisa saja salah prediksi jika kedua kriteria di atas tidak terpebuhi karena datasetnya yang tidak variatif untuk background
-
 # Rock-Paper-Scissors Classification Project 🪨📄✂️
 ---
 
